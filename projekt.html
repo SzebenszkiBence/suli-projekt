@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minigames</title>
+    <link rel="stylesheet" href="projekt.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Minigame Hub</h1>
+        <div class="game" id="snake-game">
+            <h2>Snake</h2>
+            <canvas id="snake" width="300" height="300"></canvas>
+            <button onclick="startSnake()">Start Snake</button>
+            <button onclick="toggleFullScreen('snake-game')">Fullscreen</button>
+        </div>
+        <div class="game" id="tic-tac-toe-game">
+            <h2>Tic-Tac-Toe</h2>
+            <div id="tic-tac-toe">
+                <table>
+                    <tr>
+                        <td onclick="makeMove(this, 0)"></td>
+                        <td onclick="makeMove(this, 1)"></td>
+                        <td onclick="makeMove(this, 2)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="makeMove(this, 3)"></td>
+                        <td onclick="makeMove(this, 4)"></td>
+                        <td onclick="makeMove(this, 5)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="makeMove(this, 6)"></td>
+                        <td onclick="makeMove(this, 7)"></td>
+                        <td onclick="makeMove(this, 8)"></td>
+                    </tr>
+                </table>
+                <button onclick="resetTicTacToe()">Reset</button>
+                <button onclick="toggleFullScreen('tic-tac-toe-game')">Fullscreen</button>
+            </div>
+        </div>
+        <div class="game" id="hangman-game">
+            <h2>Hangman</h2>
+            <canvas id="hangmanCanvas" width="300" height="300"></canvas>
+            <div id="hangman">
+                <p id="wordDisplay">_ _ _ _ _</p>
+                <input type="text" id="letterGuess" maxlength="1">
+                <button onclick="guessLetter()">Guess</button>
+                <button onclick="toggleFullScreen('hangman-game')">Fullscreen</button>
+                <p id="hangmanStatus">Guesses left: 6</p>
+            </div>
+        </div>
+    </div>
+    <script src="projekt.js"></script>
+</body>
+</html>
